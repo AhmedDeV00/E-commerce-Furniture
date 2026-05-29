@@ -6,7 +6,6 @@ import { WhatsAppButton } from './components/WhatsAppButton';
 import { HomePage } from './pages/HomePage';
 import { ProductsPage } from './pages/ProductsPage';
 import { ProductDetailPage } from './pages/ProductDetailPage';
-import { StudioPage } from './pages/StudioPage';
 import { Toaster } from './components/ui/sonner';
 
 function ScrollToTop() {
@@ -42,7 +41,6 @@ function AppContent() {
           <Route path="/" element={<HomePage />} />
           <Route path="/produits" element={<ProductsPage />} />
           <Route path="/produit/:id" element={<ProductDetailPage />} />
-          <Route path="/studio/*" element={<StudioPage />} />
           <Route path="*" element={<HomePage />} />
         </Routes>
       </main>

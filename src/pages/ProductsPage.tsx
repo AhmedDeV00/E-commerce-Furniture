@@ -1,12 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { motion } from 'motion/react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { Badge } from '../components/ui/badge';
 import { Button } from '../components/ui/button';
 import { Filter, Star } from 'lucide-react';
-import { loadProducts } from '../lib/sanity';
-import { fallbackProducts, productCategories, type Product } from '../lib/products';
+import { fallbackProducts, productCategories } from '../lib/products';
 import { useSeo } from '../hooks/useSeo';
 
 export function ProductsPage() {
@@ -14,44 +13,16 @@ export function ProductsPage() {
   const categoryParam = searchParams.get('category');
   const [selectedCategory, setSelectedCategory] = useState(categoryParam || 'all');
   const [showFilters, setShowFilters] = useState(false);
-  const [products, setProducts] = useState<Product[]>(fallbackProducts);
-  const [isLoading, setIsLoading] = useState(true);
 
   useSeo({
     title: 'Amine Meubles | Produits',
     description: 'Explorez la collection de meubles disponibles chez Amine Meubles.',
   });
 
-  useEffect(() => {
-    if (categoryParam) {
-      setSelectedCategory(categoryParam);
-    }
-  }, [categoryParam]);
-
-  useEffect(() => {
-    let mounted = true;
-
-    loadProducts()
-      .then((items) => {
-        if (mounted && items.length) {
-          setProducts(items);
-        }
-      })
-      .finally(() => {
-        if (mounted) {
-          setIsLoading(false);
-        }
-      });
-
-    return () => {
-      mounted = false;
-    };
-  }, []);
-
   const filteredProducts =
     selectedCategory === 'all'
-      ? products
-      : products.filter((product) => product.category === selectedCategory);
+      ? fallbackProducts
+      : fallbackProducts.filter((product) => product.category === selectedCategory);
 
   const handleCategoryChange = (category: string) => {
     setSelectedCategory(category);
@@ -146,18 +117,7 @@ export function ProductsPage() {
               </p>
             </div>
 
-            {isLoading ? (
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                {fallbackProducts.slice(0, 6).map((product) => (
-                  <div key={product.id} className="animate-pulse">
-                    <div className="relative overflow-hidden rounded-lg mb-4 aspect-[3/4] bg-gray-100" />
-                    <div className="h-5 w-2/3 bg-gray-100 rounded mb-2" />
-                    <div className="h-4 w-full bg-gray-100 rounded mb-2" />
-                    <div className="h-4 w-1/2 bg-gray-100 rounded" />
-                  </div>
-                ))}
-              </div>
-            ) : filteredProducts.length === 0 ? (
+            {filteredProducts.length === 0 ? (
               <div className="text-center py-20">
                 <p className="text-gray-600 mb-4">
                   Aucun produit trouve dans cette categorie

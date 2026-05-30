@@ -6,18 +6,8 @@ import { Button } from '../components/ui/button';
 import { Badge } from '../components/ui/badge';
 import { Separator } from '../components/ui/separator';
 import { Avatar, AvatarFallback } from '../components/ui/avatar';
-import {
-  Star,
-  Check,
-  Truck,
-  Shield,
-  Palette,
-  ArrowLeft,
-  MessageCircle,
-  Quote,
-} from 'lucide-react';
+import { Star, Check, Truck, Shield, Palette, ArrowLeft, MessageCircle, Quote } from 'lucide-react';
 import { toast } from 'sonner';
-import { loadProducts } from '../lib/sanity';
 import { fallbackProducts, type Product } from '../lib/products';
 import { useSeo } from '../hooks/useSeo';
 
@@ -30,7 +20,7 @@ const testimonials = [
     initials: 'FA',
   },
   {
-    name: 'Karim Benjelloun',
+    name: 'Karim Benjelloul',
     location: 'Rabat',
     rating: 5,
     text: "Je suis impressionne par l'attention aux details et la finition luxueuse. L'equipe a su nous conseiller et repondre a toutes nos questions.",
@@ -47,15 +37,14 @@ const testimonials = [
     name: 'Youssef Tazi',
     location: 'Tanger',
     rating: 5,
-    text: "Excellente experience du debut a la fin. Les meubles sont solides, elegants et parfaitement adaptes a notre style de vie moderne.",
+    text: 'Excellente experience du debut a la fin. Les meubles sont solides, elegants et parfaitement adaptes a notre style de vie moderne.',
     initials: 'YT',
   },
 ];
 
 export function ProductDetailPage() {
   const { id } = useParams();
-  const [products, setProducts] = useState<Product[]>(fallbackProducts);
-  const [isLoading, setIsLoading] = useState(true);
+  const product = fallbackProducts.find((item) => item.slug === id || item.id === id);
   const [selectedImage, setSelectedImage] = useState(0);
   const [selectedColor, setSelectedColor] = useState('');
 
@@ -65,52 +54,9 @@ export function ProductDetailPage() {
   });
 
   useEffect(() => {
-    let mounted = true;
-
-    loadProducts()
-      .then((items) => {
-        if (mounted && items.length) {
-          setProducts(items);
-        }
-      })
-      .finally(() => {
-        if (mounted) {
-          setIsLoading(false);
-        }
-      });
-
-    return () => {
-      mounted = false;
-    };
-  }, []);
-
-  const product = products.find((item) => item.slug === id || item.id === id);
-
-  useEffect(() => {
     setSelectedImage(0);
     setSelectedColor('');
   }, [product?.id]);
-
-  if (isLoading) {
-    return (
-      <div className="min-h-screen bg-white pt-32 pb-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="animate-pulse">
-            <div className="h-6 w-40 bg-gray-100 rounded mb-8" />
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              <div className="aspect-square bg-gray-100 rounded-lg" />
-              <div className="space-y-4">
-                <div className="h-4 w-24 bg-gray-100 rounded" />
-                <div className="h-10 w-3/4 bg-gray-100 rounded" />
-                <div className="h-5 w-1/2 bg-gray-100 rounded" />
-                <div className="h-28 w-full bg-gray-100 rounded" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
 
   if (!product) {
     return (
@@ -370,7 +316,7 @@ export function ProductDetailPage() {
         >
           <h2 className="text-black mb-8">Produits similaires</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {products
+            {fallbackProducts
               .filter((item) => item.category === product.category && item.id !== product.id)
               .slice(0, 4)
               .map((relatedProduct) => (

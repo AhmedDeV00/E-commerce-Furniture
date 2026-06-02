@@ -9,7 +9,7 @@ export function Hero() {
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
         <ImageWithFallback
-          src="https://images.unsplash.com/photo-1690489965043-ec15758cce71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBpbnRlcmlvciUyMGxpdmluZyUyMHJvb218ZW58MXx8fHwxNzYwNTM4MDAwfDA&ixlib=rb-4.1.0&q=80&w=1080"
+          src="/image-hero.jpg"
           alt="Interior luxueux"
           className="w-full h-full object-cover"
           loading="eager"
@@ -45,28 +45,13 @@ export function Hero() {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-white text-white hover:bg-white hover:text-black px-8 py-6"
+                className="border-white text-black hover:bg-black hover:text-white px-8 py-6"
                 type="button"
               >
                 Nous Contacter
               </Button>
             </a>
           </div>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 1 }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ repeat: Infinity, duration: 2 }}
-            className="w-6 h-10 border-2 border-white rounded-full flex justify-center p-2"
-          >
-            <motion.div className="w-1 h-3 bg-white rounded-full" />
-          </motion.div>
         </motion.div>
       </div>
     </section>

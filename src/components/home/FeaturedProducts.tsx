@@ -57,21 +57,29 @@ export function FeaturedProducts() {
                   )}
                 </div>
                 <div>
-                  <h3 className="text-black mb-2 group-hover:text-[var(--gold)] transition-colors">
+                  <h3 className="text-black font-bold mb-2 group-hover:text-[var(--gold)] transition-colors">
                     {product.name}
                   </h3>
                   <div className="flex items-center mb-2">
                     <div className="flex items-center mr-2">
-                      <Star className="h-4 w-4 fill-[var(--gold)] text-[var(--gold)]" />
-                      <span className="text-sm text-gray-600 ml-1">{product.rating}</span>
+                      <div className="flex items-center mr-4">
+                        {Array.from({ length: 5 }).map((_, i) => (
+                          <Star
+                            key={i}
+                            className={`h-4 w-4 ${i < Math.floor(product.rating)
+                              ? 'fill-[var(--gold)] text-[var(--gold)]'
+                              : 'text-gray-300'
+                              }`}
+                          />
+                        ))}
+                      </div>
                     </div>
-                    <span className="text-sm text-gray-500">({product.reviews} avis)</span>
                   </div>
                   <div className="flex items-center">
-                    <span className="text-black mr-2">{product.price.toLocaleString()} DH</span>
+                    <span className="text-black mr-2">{product.price.toLocaleString()} TND</span>
                     {product.oldPrice && (
                       <span className="text-gray-400 line-through text-sm">
-                        {product.oldPrice.toLocaleString()} DH
+                        {product.oldPrice.toLocaleString()} TND
                       </span>
                     )}
                   </div>

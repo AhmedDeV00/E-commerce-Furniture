@@ -24,7 +24,7 @@ export function About() {
           >
             <div className="relative rounded-lg overflow-hidden aspect-[4/3]">
               <ImageWithFallback
-                src="https://images.unsplash.com/photo-1759753976401-4b41b1acdaaa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtaW5pbWFsaXN0JTIwZnVybml0dXJlJTIwc2hvd3Jvb218ZW58MXx8fHwxNzYwNTM4MDAwfDA&ixlib=rb-4.1.0&q=80&w=1080"
+                src="https://cdn.leonardo.ai/users/92c78ee4-4c2a-478d-bf47-2e3c1285d1a3/generations/63c580b3-7353-4cb2-be3d-ce7bf3065b58/Phoenix_10_A_luxurious_modern_furniture_showroom_representing_3.jpg"
                 alt="Showroom Amine Meubles"
                 className="w-full h-full object-cover"
               />

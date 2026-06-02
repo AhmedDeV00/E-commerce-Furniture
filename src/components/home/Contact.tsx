@@ -107,7 +107,7 @@ export function Contact() {
           >
             <div className="h-full min-h-[500px]">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.6449890445087!2d-7.6177334!3d33.5731104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda7cd4778aa113b%3A0xb06c1d84f310fd3!2sCasablanca%2C%20Morocco!5e0!3m2!1sen!2s!4v1234567890123!5m2!1sen!2s"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3242.870879380318!2d10.767766575248237!3d35.63090953273757!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13020f00657204bb%3A0x42494e4da35f51e!2sAmine%20meubles%20jammel!5e0!3m2!1sfr!2stn!4v1761044402740!5m2!1sfr!2stn"
                 width="100%"
                 height="100%"
                 style={{ border: 0, minHeight: '500px' }}

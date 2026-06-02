@@ -72,9 +72,8 @@ export function ProductDetailPage() {
   }
 
   const handleWhatsAppContact = () => {
-    const message = `Bonjour, je suis interesse(e) par ${product.name} (${product.price.toLocaleString()} DH)${
-      selectedColor ? ` en ${selectedColor}` : ''
-    }.`;
+    const message = `Bonjour, je suis interesse(e) par ${product.name} (${product.price.toLocaleString()} DH)${selectedColor ? ` en ${selectedColor}` : ''
+      }.`;
     window.open(`https://wa.me/212600000000?text=${encodeURIComponent(message)}`, '_blank');
   };
 
@@ -118,11 +117,10 @@ export function ProductDetailPage() {
                       key={image}
                       onClick={() => setSelectedImage(index)}
                       type="button"
-                      className={`aspect-square rounded-lg overflow-hidden border-2 transition-all ${
-                        selectedImage === index
-                          ? 'border-[var(--gold)]'
-                          : 'border-transparent hover:border-gray-300'
-                      }`}
+                      className={`aspect-square rounded-lg overflow-hidden border-2 transition-all ${selectedImage === index
+                        ? 'border-[var(--gold)]'
+                        : 'border-transparent hover:border-gray-300'
+                        }`}
                     >
                       <ImageWithFallback
                         src={image}
@@ -151,17 +149,13 @@ export function ProductDetailPage() {
                   {Array.from({ length: 5 }).map((_, i) => (
                     <Star
                       key={i}
-                      className={`h-5 w-5 ${
-                        i < Math.floor(product.rating)
-                          ? 'fill-[var(--gold)] text-[var(--gold)]'
-                          : 'text-gray-300'
-                      }`}
+                      className={`h-5 w-5 ${i < Math.floor(product.rating)
+                        ? 'fill-[var(--gold)] text-[var(--gold)]'
+                        : 'text-gray-300'
+                        }`}
                     />
                   ))}
                 </div>
-                <span className="text-gray-600">
-                  {product.rating} ({product.reviews} avis)
-                </span>
               </div>
             </div>
 
@@ -200,11 +194,10 @@ export function ProductDetailPage() {
                       key={color}
                       onClick={() => setSelectedColor(color)}
                       type="button"
-                      className={`px-4 py-2 rounded-lg border-2 transition-all ${
-                        selectedColor === color
-                          ? 'border-[var(--gold)] bg-[var(--gold-light)]'
-                          : 'border-gray-300 hover:border-gray-400'
-                      }`}
+                      className={`px-4 py-2 rounded-lg border-2 transition-all ${selectedColor === color
+                        ? 'border-[var(--gold)] bg-[var(--gold-light)]'
+                        : 'border-gray-300 hover:border-gray-400'
+                        }`}
                     >
                       {color}
                     </button>
@@ -260,15 +253,6 @@ export function ProductDetailPage() {
               >
                 <MessageCircle className="mr-2 h-5 w-5" />
                 Commander via WhatsApp
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="w-full border-black text-black hover:bg-black hover:text-white"
-                onClick={handleAddToFavorites}
-                type="button"
-              >
-                Ajouter aux Favoris
               </Button>
             </div>
           </motion.div>

@@ -76,11 +76,10 @@ export function ProductsPage() {
                     key={category.id}
                     onClick={() => handleCategoryChange(category.id)}
                     type="button"
-                    className={`w-full text-left px-4 py-3 rounded-lg transition-all ${
-                      selectedCategory === category.id
-                        ? 'bg-[var(--gold)] text-black'
-                        : 'bg-white text-gray-700 hover:bg-gray-100'
-                    }`}
+                    className={`w-full text-left px-4 py-3 rounded-lg transition-all ${selectedCategory === category.id
+                      ? 'bg-[var(--gold)] text-black'
+                      : 'bg-white text-gray-700 hover:bg-gray-100'
+                      }`}
                   >
                     {category.label}
                     {selectedCategory === category.id && (
@@ -164,21 +163,25 @@ export function ProductsPage() {
                         <h3 className="text-black mb-2 group-hover:text-[var(--gold)] transition-colors">
                           {product.name}
                         </h3>
-                        <p className="text-gray-600 text-sm mb-3 line-clamp-2">
-                          {product.description}
-                        </p>
+
                         <div className="flex items-center mb-2">
                           <div className="flex items-center mr-2">
-                            <Star className="h-4 w-4 fill-[var(--gold)] text-[var(--gold)]" />
-                            <span className="text-sm text-gray-600 ml-1">{product.rating}</span>
+                            {Array.from({ length: 5 }).map((_, i) => (
+                              <Star
+                                key={i}
+                                className={`h-4 w-4 ${i < Math.floor(product.rating)
+                                  ? 'fill-[var(--gold)] text-[var(--gold)]'
+                                  : 'text-gray-300'
+                                  }`}
+                              />
+                            ))}
                           </div>
-                          <span className="text-sm text-gray-500">({product.reviews} avis)</span>
                         </div>
                         <div className="flex items-center">
-                          <span className="text-black mr-2">{product.price.toLocaleString()} DH</span>
+                          <span className="text-black mr-2">{product.price.toLocaleString()} TND</span>
                           {product.oldPrice && (
                             <span className="text-gray-400 line-through text-sm">
-                              {product.oldPrice.toLocaleString()} DH
+                              {product.oldPrice.toLocaleString()} TND
                             </span>
                           )}
                         </div>

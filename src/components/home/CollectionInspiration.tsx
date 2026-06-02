@@ -7,25 +7,25 @@ const collections = [
   {
     title: 'Collection Salon',
     description: 'Élégance et confort pour vos moments de détente',
-    image: 'https://images.unsplash.com/photo-1684261556324-a09b2cdf68b1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBtb2Rlcm4lMjBzb2ZhfGVufDF8fHx8MTc2MDUzNzk5OHww&ixlib=rb-4.1.0&q=80&w=1080',
+    image: '/image-collection-1.jpg',
     category: 'salon',
   },
   {
     title: 'Collection Salle à Manger',
     description: 'Partagez des moments précieux en famille',
-    image: 'https://images.unsplash.com/photo-1698280954292-c955f882486f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGVnYW50JTIwZGluaW5nJTIwdGFibGV8ZW58MXx8fHwxNzYwNTM3OTk5fDA&ixlib=rb-4.1.0&q=80&w=1080',
+    image: '/image-collection-2.jpg',
     category: 'salle-a-manger',
   },
   {
     title: 'Collection Chambre',
     description: 'Votre sanctuaire de repos et de sérénité',
-    image: 'https://images.unsplash.com/photo-1760072513376-67a46aab0fd1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkZXNpZ25lciUyMGJlZHJvb20lMjBmdXJuaXR1cmV8ZW58MXx8fHwxNzYwNTM3OTk5fDA&ixlib=rb-4.1.0&q=80&w=1080',
+    image: '/image-collection-3.jpg',
     category: 'chambre',
   },
   {
     title: 'Collection Bureau',
     description: 'Productivité et style pour votre espace de travail',
-    image: 'https://images.unsplash.com/photo-1621743018966-29194999d736?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBvZmZpY2UlMjBkZXNrfGVufDF8fHx8MTc2MDUwNjYxMHww&ixlib=rb-4.1.0&q=80&w=1080',
+    image: '/image-collection-4.jpg',
     category: 'bureau',
   },
 ];

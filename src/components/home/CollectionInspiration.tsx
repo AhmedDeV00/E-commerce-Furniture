@@ -76,7 +76,7 @@ export function CollectionInspiration() {
                   <Link to={`/produits?category=${collection.category}`}>
                     <Button
                       variant="outline"
-                      className="border-white text-white hover:bg-[var(--gold)] hover:border-[var(--gold)] hover:text-black"
+                      className="border-white text-black hover:bg-[var(--gold)] hover:border-[var(--gold)] hover:text-black"
                     >
                       Découvrir
                     </Button>

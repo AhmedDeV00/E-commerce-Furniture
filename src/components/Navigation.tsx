@@ -39,7 +39,7 @@ export function Navigation() {
         <div className="flex justify-between items-center h-20">
           <Link to="/" className="flex items-center space-x-2">
             <div className="flex items-center">
-              <span className="text-black tracking-tight">Amine</span>
+              <span className="text-black tracking-tight">AMINE</span>
               <span className="text-[var(--gold)] ml-1">MEUBLES</span>
             </div>
           </Link>

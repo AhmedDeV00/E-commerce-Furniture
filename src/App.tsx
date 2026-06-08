@@ -8,6 +8,7 @@ import { ProductsPage } from './pages/ProductsPage';
 import { ProductDetailPage } from './pages/ProductDetailPage';
 import { Toaster } from './components/ui/sonner';
 import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -49,6 +50,7 @@ function AppContent() {
       <WhatsAppButton />
       <Toaster position="top-center" richColors />
       <Analytics />
+      <SpeedInsights />
     </>
   );
 }

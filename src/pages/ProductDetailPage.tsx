@@ -77,9 +77,6 @@ export function ProductDetailPage() {
     window.open(`https://wa.me/212600000000?text=${encodeURIComponent(message)}`, '_blank');
   };
 
-  const handleAddToFavorites = () => {
-    toast.success('Produit ajoute aux favoris');
-  };
 
   return (
     <div className="min-h-screen bg-white pt-32 pb-20">

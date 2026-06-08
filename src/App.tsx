@@ -7,6 +7,7 @@ import { HomePage } from './pages/HomePage';
 import { ProductsPage } from './pages/ProductsPage';
 import { ProductDetailPage } from './pages/ProductDetailPage';
 import { Toaster } from './components/ui/sonner';
+import { Analytics } from '@vercel/analytics/next';
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -47,6 +48,7 @@ function AppContent() {
       <Footer />
       <WhatsAppButton />
       <Toaster position="top-center" richColors />
+      <Analytics />
     </>
   );
 }

@@ -72,7 +72,7 @@ export function ProductDetailPage() {
   }
 
   const handleWhatsAppContact = () => {
-    const message = `Bonjour, je suis interesse(e) par ${product.name} (${product.price.toLocaleString()} DH)${selectedColor ? ` en ${selectedColor}` : ''
+    const message = `Bonjour, je suis interesse(e) par ${product.name} (${product.price.toLocaleString()} TND)${selectedColor ? ` en ${selectedColor}` : ''
       }.`;
     window.open(`https://wa.me/212600000000?text=${encodeURIComponent(message)}`, '_blank');
   };
@@ -161,10 +161,10 @@ export function ProductDetailPage() {
 
             <div className="mb-6">
               <div className="flex items-baseline mb-2">
-                <span className="text-3xl text-black mr-3">{product.price.toLocaleString()} DH</span>
+                <span className="text-3xl text-black mr-3">{product.price.toLocaleString()} TND</span>
                 {product.oldPrice && (
                   <span className="text-xl text-gray-400 line-through">
-                    {product.oldPrice.toLocaleString()} DH
+                    {product.oldPrice.toLocaleString()} TND
                   </span>
                 )}
               </div>
@@ -315,7 +315,7 @@ export function ProductDetailPage() {
                   <h4 className="text-black mb-1 group-hover:text-[var(--gold)] transition-colors">
                     {relatedProduct.name}
                   </h4>
-                  <p className="text-gray-600">{relatedProduct.price.toLocaleString()} DH</p>
+                  <p className="text-gray-600">{relatedProduct.price.toLocaleString()} TND</p>
                 </Link>
               ))}
           </div>
